@@ -10,7 +10,7 @@ export const personalInfo = {
     "Senior Cloud DevOps Engineer with 11+ years of hands-on experience in cloud security, infrastructure engineering, and automation equivalent to formal technical education through deep, applied expertise. Proven track record of executing enterprise-scale AWS IAM security remediation and multi-account access governance across 200+ AWS accounts in highly regulated healthcare and financial-services environments. Skilled in designing least-privilege access models, automating secure infrastructure delivery, and strengthening cloud security posture through policy-as-code and pipeline-driven remediation.",
   socialLinks: {
     linkedin: "https://linkedin.com/in/kowsharahmed",
-    github: "",
+    github: "https://github.com/MdKowsharAhmed",
     portfolio: "",
   },
 };

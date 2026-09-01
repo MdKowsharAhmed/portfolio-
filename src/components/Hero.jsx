@@ -7,6 +7,8 @@ import {
   FiShield,
   FiCheckCircle,
   FiExternalLink,
+  FiGithub,
+  FiLinkedin,
 } from "react-icons/fi";
 
 import { personalInfo, certifications } from "../data/portfolioData.js";
@@ -258,6 +260,90 @@ export default function Hero() {
               <FiMail size={14} style={{ color: "#38bdf8" }} />
               Contact
             </a>
+          </div>
+
+          {/* Social Links */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "1rem",
+              marginTop: "1.5rem",
+            }}
+          >
+            {personalInfo?.socialLinks?.github && (
+              <a
+                href={personalInfo.socialLinks.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub Profile"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "36px",
+                  height: "36px",
+                  borderRadius: "6px",
+                  background: "rgba(56, 189, 248, 0.08)",
+                  border: "1px solid rgba(56, 189, 248, 0.2)",
+                  color: "#38bdf8",
+                  textDecoration: "none",
+                  transition: "all 0.25s ease",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "rgba(56, 189, 248, 0.15)";
+                  e.currentTarget.style.borderColor = "rgba(56, 189, 248, 0.4)";
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                  e.currentTarget.style.boxShadow = "0 4px 12px rgba(56, 189, 248, 0.2)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "rgba(56, 189, 248, 0.08)";
+                  e.currentTarget.style.borderColor = "rgba(56, 189, 248, 0.2)";
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <FiGithub size={18} />
+              </a>
+            )}
+
+            {personalInfo?.socialLinks?.linkedin && (
+              <a
+                href={personalInfo.socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn Profile"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "36px",
+                  height: "36px",
+                  borderRadius: "6px",
+                  background: "rgba(56, 189, 248, 0.08)",
+                  border: "1px solid rgba(56, 189, 248, 0.2)",
+                  color: "#38bdf8",
+                  textDecoration: "none",
+                  transition: "all 0.25s ease",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "rgba(56, 189, 248, 0.15)";
+                  e.currentTarget.style.borderColor = "rgba(56, 189, 248, 0.4)";
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                  e.currentTarget.style.boxShadow = "0 4px 12px rgba(56, 189, 248, 0.2)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "rgba(56, 189, 248, 0.08)";
+                  e.currentTarget.style.borderColor = "rgba(56, 189, 248, 0.2)";
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <FiLinkedin size={18} />
+              </a>
+            )}
           </div>
         </div>
 
