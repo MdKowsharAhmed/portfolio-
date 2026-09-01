@@ -1,0 +1,141 @@
+/* ==========================
+   GLOBAL RESET
+========================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================
+   HTML / BODY / ROOT
+========================== */
+
+html {
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+  color: #ffffff;
+
+  /* Background from your image */
+  background: linear-gradient(
+    180deg,
+    #173A6D 0%,
+    #133561 30%,
+    #12315B 60%,
+    #112C54 85%,
+    #0F284D 100%
+  );
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ==========================
+   TYPOGRAPHY
+========================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+p {
+  color: #d7e3f4;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ==========================
+   IMAGES
+========================== */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* ==========================
+   INPUTS
+========================== */
+
+input,
+textarea,
+select {
+  font: inherit;
+  outline: none;
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #10294f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #60a5fa;
+}
+
+/* ==========================
+   SELECTION
+========================== */
+
+::selection {
+  background: #3b82f6;
+  color: #fff;
+}
