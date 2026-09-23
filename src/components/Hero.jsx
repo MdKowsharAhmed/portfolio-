@@ -127,6 +127,45 @@ export default function Hero() {
           max-width: 520px;
         }
 
+        .hero-positioning {
+          color: #e0f2fe;
+          font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+          font-weight: 650;
+          line-height: 1.35;
+          margin: 0 0 0.85rem;
+          max-width: 600px;
+        }
+
+        .hero-metrics {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 0.55rem;
+          margin: 1.5rem 0 0;
+          max-width: 650px;
+        }
+
+        .hero-metric {
+          padding: 0.75rem 0.7rem;
+          border-left: 2px solid #38bdf8;
+          background: rgba(15, 28, 54, 0.58);
+        }
+
+        .hero-metric-value {
+          display: block;
+          color: #f8fafc;
+          font-size: 1.05rem;
+          font-weight: 800;
+          line-height: 1.1;
+        }
+
+        .hero-metric-label {
+          display: block;
+          color: #94a3b8;
+          font-size: 0.65rem;
+          line-height: 1.25;
+          margin-top: 0.3rem;
+        }
+
         .hero-buttons {
           display: flex;
           align-items: center;
@@ -183,6 +222,10 @@ export default function Hero() {
             justify-content: center;
             box-sizing: border-box;
           }
+
+          .hero-metrics {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
         }
       `}</style>
 
@@ -192,8 +235,12 @@ export default function Hero() {
           {/* Professional Salutation */}
           <div className="hero-salutation">Hello,</div>
 
-          {/* Clean Executive Name Title */}
+          {/* Clear hiring-manager positioning */}
           <h1 className="hero-name-heading">I'm Kowshar Ahmed</h1>
+
+          <p className="hero-positioning">
+            Cloud DevOps &amp; IAM Engineer building secure, observable platforms at scale.
+          </p>
 
           {/* Compact Role Badges */}
           <div className="hero-roles-container">
@@ -208,6 +255,17 @@ export default function Hero() {
           {/* Narrative Summary */}
           {personalInfo?.summary && (
             <p className="hero-summary">{personalInfo.summary}</p>
+          )}
+
+          {personalInfo?.impactMetrics && (
+            <div className="hero-metrics" aria-label="Career impact metrics">
+              {personalInfo.impactMetrics.map((metric) => (
+                <div className="hero-metric" key={metric.label}>
+                  <span className="hero-metric-value">{metric.value}</span>
+                  <span className="hero-metric-label">{metric.label}</span>
+                </div>
+              ))}
+            </div>
           )}
 
           {/* Action Buttons */}
@@ -274,6 +332,7 @@ export default function Hero() {
                 href={personalInfo.socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub Profile"
                 title="GitHub Profile"
                 style={{
                   display: "inline-flex",
@@ -311,6 +370,7 @@ export default function Hero() {
                 href={personalInfo.socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
                 title="LinkedIn Profile"
                 style={{
                   display: "inline-flex",

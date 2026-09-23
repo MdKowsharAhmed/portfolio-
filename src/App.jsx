@@ -21,10 +21,10 @@ export default function App() {
     >
       <Navbar />
       <Hero />
-      <Skills />
-      <Achievements />
-      <Certifications />
       <Experience />
+      <Achievements />
+      <Skills />
+      <Certifications />
       <Footer />
     </div>
   );

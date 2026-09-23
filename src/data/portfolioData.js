@@ -2,12 +2,18 @@
 
 export const personalInfo = {
   name: "MD KOWSHAR AHMED",
-  title: "Senior Cloud DevOps Engineer | Identity & Access Management | Platform Engineer | DevSecOps Engineer",
+  title: "Cloud DevOps & IAM Engineer",
   email: "aiops.kowshar@gmail.com",
   phone: "405-479-8989",
   location: "Dallas, TX 75069",
   summary:
-    "Senior Cloud DevOps Engineer with 11+ years of hands-on experience in cloud security, infrastructure engineering, and automation equivalent to formal technical education through deep, applied expertise. Proven track record of executing enterprise-scale AWS IAM security remediation and multi-account access governance across 200+ AWS accounts in highly regulated healthcare and financial-services environments. Skilled in designing least-privilege access models, automating secure infrastructure delivery, and strengthening cloud security posture through policy-as-code and pipeline-driven remediation.",
+    "Cloud DevOps and IAM engineer specializing in secure multi-account AWS platforms, least-privilege access, and DevSecOps automation. I turn identity findings and operational risk into repeatable Terraform, Python, and pipeline-driven remediation across regulated healthcare and financial-services environments.",
+  impactMetrics: [
+    { value: "200+", label: "AWS accounts governed" },
+    { value: "50%", label: "fewer stale identities" },
+    { value: "40%", label: "faster IAM remediation" },
+    { value: "99.9%", label: "application availability" },
+  ],
   socialLinks: {
     linkedin: "https://linkedin.com/in/kowsharahmed",
     github: "https://github.com/MdKowsharAhmed",
