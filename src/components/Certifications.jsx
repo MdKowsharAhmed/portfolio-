@@ -16,6 +16,19 @@ export default function Certifications() {
     url: 'https://www.credly.com/badges/98a5867d-1188-4169-bcd2-b70caf0b1b6a/linked_in_profile'
   };
 
+  const additionalCerts = [
+    {
+      id: 'microsoft-azure-ai-fundamentals',
+      title: 'Microsoft Certified: Azure AI Fundamentals',
+      issued: 'Microsoft Learn credential',
+      expires: 'No expiration',
+      image: certificate1Img,
+      url: 'https://learn.microsoft.com/en-us/users/kowshar-6774/credentials/7765784df672a010?ref=https%3A%2F%2Fwww.linkedin.com%2F'
+    }
+  ];
+
+  const certifications = [singleCert, ...additionalCerts];
+
   return (
     <section 
       id="certifications" 
@@ -59,91 +72,47 @@ export default function Certifications() {
           gap: '1rem' 
         }}
       >
-        <a 
-          href={singleCert.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cert-grid-card"
-          style={{ 
-            backgroundColor: '#111827', 
-            padding: '1rem 1.25rem', 
-            borderRadius: '8px', 
-            border: '1px solid #1e293b',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1rem',
-            boxSizing: 'border-box',
-            textDecoration: 'none',
-            cursor: 'pointer'
-          }}
-        >
-          <div 
-            style={{ 
-              backgroundColor: '#1e293b', 
-              padding: '0.5rem', 
-              borderRadius: '6px', 
-              display: 'flex', 
-              alignItems: 'center', 
-              justifyContent: 'center',
-              width: '44px',
-              height: '44px',
-              flexShrink: 0
+        {certifications.map((cert) => (
+          <a
+            key={cert.id}
+            href={cert.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cert-grid-card"
+            style={{
+              backgroundColor: '#111827',
+              padding: '1rem 1.25rem',
+              borderRadius: '8px',
+              border: '1px solid #1e293b',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1rem',
+              boxSizing: 'border-box',
+              textDecoration: 'none',
+              cursor: 'pointer'
             }}
           >
-            <img 
-              src={singleCert.image} 
-              alt={singleCert.title} 
-              style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
-            />
-          </div>
-
-          <div style={{ minWidth: 0, flex: 1 }}>
-            <h3 
-              style={{ 
-                fontSize: 'clamp(0.875rem, 2.5vw, 0.95rem)', 
-                color: '#ffffff', 
-                margin: 0, 
-                fontWeight: '600',
-                lineHeight: '1.35',
-                wordBreak: 'break-word'
-              }}
-            >
-              {singleCert.title}
-            </h3>
-
-            {/* Verified status badge & Issued date */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.4rem', marginTop: '0.3rem' }}>
-              <span 
-                style={{ 
-                  color: '#38bdf8', 
-                  fontSize: '0.75rem', 
-                  fontWeight: '500'
-                }}
-              >
-                ✓ Verified
-              </span>
-              <span style={{ color: '#475569', fontSize: '0.75rem' }}>•</span>
-              <span style={{ color: '#cbd5e1', fontSize: '0.75rem' }}>
-                Issued {singleCert.issued}
-              </span>
+            <div style={{ backgroundColor: '#1e293b', padding: '0.5rem', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px', flexShrink: 0 }}>
+              <img src={cert.image} alt={cert.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
 
-            {/* Expiration date */}
-            <div style={{ color: '#64748b', fontSize: '0.725rem', marginTop: '0.15rem' }}>
-              Expires {singleCert.expires}
-            </div>
-          </div>
+            <div style={{ minWidth: 0, flex: 1 }}>
+              <h3 style={{ fontSize: 'clamp(0.875rem, 2.5vw, 0.95rem)', color: '#ffffff', margin: 0, fontWeight: '600', lineHeight: '1.35', wordBreak: 'break-word' }}>
+                {cert.title}
+              </h3>
 
-          <FiExternalLink
-            size={16}
-            className="cert-ext-icon"
-            style={{
-              color: '#64748b',
-              flexShrink: 0,
-              transition: 'color 0.2s ease'
-            }}
-          />
-        </a>
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.4rem', marginTop: '0.3rem' }}>
+                <span style={{ color: '#38bdf8', fontSize: '0.75rem', fontWeight: '500' }}>✓ Verified</span>
+                <span style={{ color: '#475569', fontSize: '0.75rem' }}>•</span>
+                <span style={{ color: '#cbd5e1', fontSize: '0.75rem' }}>Issued {cert.issued}</span>
+              </div>
+
+              <div style={{ color: '#64748b', fontSize: '0.725rem', marginTop: '0.15rem' }}>Expires {cert.expires}</div>
+            </div>
+
+            <FiExternalLink size={16} className="cert-ext-icon" style={{ color: '#64748b', flexShrink: 0, transition: 'color 0.2s ease' }} />
+          </a>
+        ))}
       </div>
     </section>
   );

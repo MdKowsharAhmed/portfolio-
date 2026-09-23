@@ -181,6 +181,14 @@ export const certifications = [
     url: "https://www.credly.com/badges/98a5867d-1188-4169-bcd2-b70caf0b1b6a/linked_in_profile",
     verified: true,
   },
+  {
+    id: "microsoft-azure-ai-fundamentals",
+    title: "Microsoft Certified: Azure AI Fundamentals",
+    issuer: "Microsoft",
+    date: "Microsoft Learn credential",
+    url: "https://learn.microsoft.com/en-us/users/kowshar-6774/credentials/7765784df672a010?ref=https%3A%2F%2Fwww.linkedin.com%2F",
+    verified: true,
+  },
 ];
 
 const portfolioData = {
