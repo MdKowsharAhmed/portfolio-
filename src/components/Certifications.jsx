@@ -1,33 +1,18 @@
 // src/components/Certifications.jsx
 import React from 'react';
 import { FiExternalLink } from 'react-icons/fi';
+import { certifications as certificationData } from '../data/portfolioData.js';
 
 // Import local certificate icon asset
 import certificate1Img from '../assets/certificate1.png';
 
 export default function Certifications() {
-  // Single certification details including issue and expiration dates
-  const singleCert = {
-    id: 'aws-csaa',
-    title: 'AWS Certified Solutions Architect – Associate',
-    issued: 'July 29, 2026',
-    expires: 'July 29, 2029',
+  const certifications = certificationData.map((cert) => ({
+    ...cert,
+    issued: cert.issueDate || cert.date,
+    expires: cert.expirationDate || 'No expiration',
     image: certificate1Img,
-    url: 'https://www.credly.com/badges/98a5867d-1188-4169-bcd2-b70caf0b1b6a/linked_in_profile'
-  };
-
-  const additionalCerts = [
-    {
-      id: 'microsoft-azure-ai-fundamentals',
-      title: 'Microsoft Certified: Azure AI Fundamentals',
-      issued: 'Microsoft Learn credential',
-      expires: 'No expiration',
-      image: certificate1Img,
-      url: 'https://learn.microsoft.com/en-us/users/kowshar-6774/credentials/7765784df672a010?ref=https%3A%2F%2Fwww.linkedin.com%2F'
-    }
-  ];
-
-  const certifications = [singleCert, ...additionalCerts];
+  }));
 
   return (
     <section 

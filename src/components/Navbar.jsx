@@ -150,6 +150,8 @@ export default function Navbar() {
         {isMobile && (
           <button
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={menuOpen}
             style={{
               background: "transparent",
               border: "none",

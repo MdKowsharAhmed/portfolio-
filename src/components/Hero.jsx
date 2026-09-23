@@ -34,8 +34,6 @@ export default function Hero() {
   // Helper function to pick the local image based on certification content
   const getCertImage = (cert) => {
     if (cert.icon) return cert.icon;
-    const name = cert.title ? cert.title.toLowerCase() : "";
-    if (name.includes("security") || name.includes("cyber")) return securityImg;
     return devopsImg;
   };
 
